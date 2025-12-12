@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE Preparation Portal | Branch-wise Syllabus & Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #1b5e20;
+            --secondary: #2e7d32;
+            --accent: #4caf50;
+            --gate-green: #388e3c;
+            --gate-light: #c8e6c9;
+            --light: #f5f5f5;
+            --dark: #1b5e20;
+            --success: #43a047;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--gate-green), #43a047);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(56, 142, 60, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gate-green);
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            color: white;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 14px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--gate-green);
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            background: #e8f5e9;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            color: #333;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 50px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--gate-green), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            min-width: 150px;
+            border: 2px solid var(--gate-light);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gate-green);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        /* Branches Sidebar */
+        .branches-sidebar {
+            flex: 0 0 300px;
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+            border: 2px solid var(--gate-light);
+        }
+
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--gate-green);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gate-light);
+        }
+
+        .branch-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .branch-item:hover {
+            background: rgba(56, 142, 60, 0.05);
+            transform: translateX(5px);
+            border-color: var(--gate-green);
+        }
+
+        .branch-item.active {
+            background: linear-gradient(135deg, var(--gate-green), var(--accent));
+            color: white;
+            border-color: var(--gate-green);
+        }
+
+        .branch-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        .branch-icon.cse { background: linear-gradient(135deg, #2196f3, #1976d2); }
+        .branch-icon.ece { background: linear-gradient(135deg, #9c27b0, #7b1fa2); }
+        .branch-icon.eee { background: linear-gradient(135deg, #ff9800, #f57c00); }
+        .branch-icon.mech { background: linear-gradient(135deg, #f44336, #d32f2f); }
+        .branch-icon.civil { background: linear-gradient(135deg, #4caf50, #388e3c); }
+        .branch-icon.it { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+        .branch-icon.chem { background: linear-gradient(135deg, #673ab7, #512da8); }
+        .branch-icon.instr { background: linear-gradient(135deg, #3f51b5, #303f9f); }
+
+        .branch-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Syllabus Content */
+        .syllabus-content {
+            flex: 1;
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--gate-light);
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--gate-light);
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            color: var(--gate-green);
+        }
+
+        .gate-code {
+            background: var(--gate-light);
+            color: var(--gate-green);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Syllabus Sections */
+        .syllabus-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-card {
+            border: 1px solid #e0e0e0;
+            border-radius: var(--radius);
+            padding: 25px;
+            transition: var(--transition);
+            background: #f1f8e9;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(56, 142, 60, 0.1);
+            border-color: var(--gate-green);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--gate-green);
+            font-weight: 600;
+        }
+
+        .topic-count {
+            background: var(--gate-light);
+            color: var(--gate-green);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .topic-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            transition: var(--transition);
+        }
+
+        .topic-item:hover {
+            border-color: var(--gate-green);
+            box-shadow: 0 4px 8px rgba(56, 142, 60, 0.1);
+        }
+
+        .topic-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .topic-weightage {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .youtube-channels {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .channels-title {
+            font-size: 1.1rem;
+            color: var(--gate-green);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .channels-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .channel-card {
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .channel-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            border-color: #ff0000;
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .channel-icon {
+            width: 40px;
+            height: 40px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .channel-stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .channel-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--gate-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .channel-link:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Resources Section */
+        .resources {
+            background: white;
+            border-radius: var(--radius);
+            padding: 60px 40px;
+            margin-bottom: 80px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--gate-light);
+        }
+
+        .section-title-main {
+            font-size: 2.5rem;
+            color: var(--gate-green);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            background: #f1f8e9;
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: var(--transition);
+            border: 1px solid var(--gate-light);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(56, 142, 60, 0.2);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gate-green), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            color: var(--gate-green);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .resource-desc {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gate-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .resource-link:hover {
+            gap: 12px;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--gate-green), #43a047);
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .branches-sidebar {
+                position: static;
+                flex: none;
+                width: 100%;
+            }
+            
+            .topics-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+            }
+            
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .channels-list {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .content-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-card, .branch-item {
+                padding: 20px;
+            }
+            
+            .resources {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">GATE</div>
+                    <div class="logo-text">
+                        <h1>GATE Preparation Portal</h1>
+                        <span>Complete Syllabus & YouTube Resources</span>
+                    </div>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="#home"><i class="fas fa-home"></i> Home</a>
+                    <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
+                    <a href="#resources"><i class="fas fa-tools"></i> Resources</a>
+                    <a href="#pyq"><i class="fas fa-file-alt"></i> PYQs</a>
+                    <a href="#mock"><i class="fas fa-chart-line"></i> Mock Tests</a>
+                    <button class="cta-button">
+                        <i class="fas fa-rocket"></i>
+                        Start Preparation
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Master GATE 2025 with Branch-wise Syllabus</h2>
+            <p>Complete syllabus breakdown for each engineering branch with topic-wise YouTube channel recommendations, study plans, and preparation strategies.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Engineering Branches</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">65+</div>
+                    <div class="stat-label">Core Subjects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">YouTube Channels</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20K+</div>
+                    <div class="stat-label">Video Lectures</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content" id="syllabus">
+            <!-- Branches Sidebar -->
+            <div class="branches-sidebar">
+                <h3 class="sidebar-title">Select Your Branch</h3>
+                <div id="branchesList">
+                    <!-- Branches will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Syllabus Content -->
+            <div class="syllabus-content">
+                <div class="content-header">
+                    <h2 id="selectedBranchTitle">Computer Science & Engineering (CSE)</h2>
+                    <span class="gate-code" id="gateCode">GATE Code: CS</span>
+                </div>
+                
+                <div class="syllabus-sections" id="syllabusSections">
+                    <!-- Syllabus sections will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title-main">Additional Preparation Resources</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-card animate-in">
+                    <div class="resource-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="resource-title">Study Plan</h3>
+                    <p class="resource-desc">6-month and 1-year study plans with daily, weekly, and monthly targets for systematic preparation.</p>
+                    <a href="#" class="resource-link">
+                        Download Study Plan
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="resource-card animate-in">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">Previous Papers</h3>
+                    <p class="resource-desc">GATE previous year question papers (2010-2024) with solutions and detailed explanations.</p>
+                    <a href="#" class="resource-link">
+                        Download PYQs
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="resource-card animate-in">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="resource-title">Mock Tests</h3>
+                    <p class="resource-desc">Full-length mock tests with detailed analysis, percentile predictor, and performance tracking.</p>
+                    <a href="#" class="resource-link">
+                        Take Mock Test
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="resource-card animate-in">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="resource-title">Reference Books</h3>
+                    <p class="resource-desc">Recommended books for each subject with topic-wise book references and buying links.</p>
+                    <a href="#" class="resource-link">
+                        View Book List
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GATE Preparation Portal</h4>
+                    <p>Your comprehensive guide to GATE preparation with branch-wise syllabus, YouTube resources, and study materials.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#syllabus">CSE Syllabus</a></li>
+                        <li><a href="#syllabus">ECE Syllabus</a></li>
+                        <li><a href="#syllabus">Mechanical Syllabus</a></li>
+                        <li><a href="#syllabus">Civil Syllabus</a></li>
+                        <li><a href="#resources">Study Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Top YouTube Channels</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@GateSmashers" target="_blank">Gate Smashers</a></li>
+                        <li><a href="https://www.youtube.com/@nesoacademy" target="_blank">Neso Academy</a></li>
+                        <li><a href="https://www.youtube.com/@abdul_bari" target="_blank">Abdul Bari</a></li>
+                        <li><a href="https://www.youtube.com/@UnacademyGATE" target="_blank">Unacademy GATE</a></li>
+                        <li><a href="https://www.youtube.com/@Ekeeda_GATE" target="_blank">Ekeeda GATE</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact & Support</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@gateprep.com</li>
+                        <li><i class="fas fa-phone"></i> 1800-123-4567</li>
+                        <li><a href="https://www.youtube.com/@GatePreparationPortal" target="_blank" style="color: rgba(255,255,255,0.8);"><i class="fab fa-youtube"></i> YouTube Channel</a></li>
+                        <li><a href="https://t.me/GATE_Preparation" target="_blank" style="color: rgba(255,255,255,0.8);"><i class="fab fa-telegram"></i> Telegram Group</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GATE Preparation Portal. All rights reserved. | Made for Engineering Aspirants</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Comprehensive GATE Syllabus Data with Working YouTube Channel Links
+        const branches = [
+            {
+                id: 'cse',
+                name: 'Computer Science & Engineering',
+                code: 'CS',
+                icon: 'fas fa-laptop-code',
+                color: 'cse',
+                sections: [
+                    {
+                        title: 'Engineering Mathematics',
+                        topics: 12,
+                        subjects: [
+                            { name: 'Discrete Mathematics', weightage: '6-8%', videos: 50 },
+                            { name: 'Linear Algebra', weightage: '4-6%', videos: 30 },
+                            { name: 'Probability & Statistics', weightage: '4-6%', videos: 35 },
+                            { name: 'Calculus', weightage: '3-5%', videos: 25 },
+                            { name: 'Graph Theory', weightage: '4-6%', videos: 20 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Gate Smashers',
+                                subscribers: '1.5M',
+                                videos: '500+',
+                                link: 'https://www.youtube.com/@GateSmashers',
+                                topics: 'Complete Mathematics'
+                            },
+                            {
+                                name: 'Neso Academy',
+                                subscribers: '2.1M',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@nesoacademy',
+                                topics: 'Discrete Math, Graph Theory'
+                            },
+                            {
+                                name: 'Dr. Gajendra Purohit',
+                                subscribers: '1.8M',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@DrGajendraPurohitMathematics',
+                                topics: 'Engineering Mathematics'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Digital Logic & Computer Organization',
+                        topics: 8,
+                        subjects: [
+                            { name: 'Boolean Algebra', weightage: '3-5%', videos: 20 },
+                            { name: 'Combinational Circuits', weightage: '4-6%', videos: 25 },
+                            { name: 'Sequential Circuits', weightage: '4-6%', videos: 25 },
+                            { name: 'Processor Design', weightage: '5-7%', videos: 30 },
+                            { name: 'Memory Hierarchy', weightage: '4-6%', videos: 20 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Neso Academy',
+                                subscribers: '2.1M',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@nesoacademy',
+                                topics: 'Complete Digital Logic'
+                            },
+                            {
+                                name: 'Tutorials Point (India) Ltd.',
+                                subscribers: '1.8M',
+                                videos: '100+',
+                                link: 'https://www.youtube.com/@TutorialsPoint_',
+                                topics: 'Computer Organization'
+                            },
+                            {
+                                name: 'Gate Smashers',
+                                subscribers: '1.5M',
+                                videos: '80+',
+                                link: 'https://www.youtube.com/@GateSmashers',
+                                topics: 'Computer Architecture'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Programming & Data Structures',
+                        topics: 10,
+                        subjects: [
+                            { name: 'C Programming', weightage: '6-8%', videos: 40 },
+                            { name: 'Data Structures', weightage: '8-10%', videos: 60 },
+                            { name: 'Algorithms', weightage: '8-10%', videos: 70 },
+                            { name: 'Object Oriented Programming', weightage: '3-5%', videos: 25 },
+                            { name: 'Recursion & Backtracking', weightage: '4-6%', videos: 30 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Abdul Bari',
+                                subscribers: '1.2M',
+                                videos: '400+',
+                                link: 'https://www.youtube.com/@abdul_bari',
+                                topics: 'Algorithms & Data Structures'
+                            },
+                            {
+                                name: 'Jenny\'s Lectures CS IT',
+                                subscribers: '900K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@JennyslecturesCSIT',
+                                topics: 'Programming & DS'
+                            },
+                            {
+                                name: 'CodeWithHarry',
+                                subscribers: '4.5M',
+                                videos: '500+',
+                                link: 'https://www.youtube.com/@CodeWithHarry',
+                                topics: 'C/C++ Programming'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Theory of Computation',
+                        topics: 6,
+                        subjects: [
+                            { name: 'Regular Languages', weightage: '4-6%', videos: 30 },
+                            { name: 'Context Free Languages', weightage: '4-6%', videos: 25 },
+                            { name: 'Turing Machines', weightage: '3-5%', videos: 20 },
+                            { name: 'Undecidability', weightage: '3-5%', videos: 15 },
+                            { name: 'Complexity Theory', weightage: '4-6%', videos: 25 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Gate Smashers',
+                                subscribers: '1.5M',
+                                videos: '80+',
+                                link: 'https://www.youtube.com/@GateSmashers',
+                                topics: 'Complete TOC'
+                            },
+                            {
+                                name: 'Neso Academy',
+                                subscribers: '2.1M',
+                                videos: '60+',
+                                link: 'https://www.youtube.com/@nesoacademy',
+                                topics: 'Automata Theory'
+                            },
+                            {
+                                name: 'THE GATEHUB',
+                                subscribers: '400K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@thegatehub',
+                                topics: 'TOC Complete Course'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ece',
+                name: 'Electronics & Communication',
+                code: 'EC',
+                icon: 'fas fa-microchip',
+                color: 'ece',
+                sections: [
+                    {
+                        title: 'Engineering Mathematics',
+                        topics: 10,
+                        subjects: [
+                            { name: 'Linear Algebra', weightage: '6-8%', videos: 35 },
+                            { name: 'Calculus', weightage: '5-7%', videos: 30 },
+                            { name: 'Differential Equations', weightage: '4-6%', videos: 25 },
+                            { name: 'Probability & Statistics', weightage: '4-6%', videos: 25 },
+                            { name: 'Complex Analysis', weightage: '3-5%', videos: 20 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Unacademy GATE',
+                                subscribers: '800K',
+                                videos: '400+',
+                                link: 'https://www.youtube.com/@UnacademyGATE',
+                                topics: 'Complete Engineering Math'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '250+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Mathematics for ECE'
+                            },
+                            {
+                                name: 'Dr. Gajendra Purohit',
+                                subscribers: '1.8M',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@DrGajendraPurohitMathematics',
+                                topics: 'Advanced Mathematics'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Networks, Signals & Systems',
+                        topics: 8,
+                        subjects: [
+                            { name: 'Circuit Analysis', weightage: '8-10%', videos: 50 },
+                            { name: 'Signal Representation', weightage: '6-8%', videos: 40 },
+                            { name: 'Fourier Series', weightage: '5-7%', videos: 30 },
+                            { name: 'Laplace Transform', weightage: '5-7%', videos: 30 },
+                            { name: 'Z-Transform', weightage: '4-6%', videos: 25 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Neso Academy',
+                                subscribers: '2.1M',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@nesoacademy',
+                                topics: 'Signals & Systems'
+                            },
+                            {
+                                name: 'Tutorials Point (India) Ltd.',
+                                subscribers: '1.8M',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@TutorialsPoint_',
+                                topics: 'Network Theory'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '180+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Complete Signals'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Electronic Devices',
+                        topics: 7,
+                        subjects: [
+                            { name: 'Semiconductor Physics', weightage: '6-8%', videos: 35 },
+                            { name: 'PN Junction Diodes', weightage: '5-7%', videos: 30 },
+                            { name: 'BJT & FET', weightage: '7-9%', videos: 40 },
+                            { name: 'MOSFET Circuits', weightage: '6-8%', videos: 35 },
+                            { name: 'OP-AMP Applications', weightage: '5-7%', videos: 30 }
+                        ],
+                        channels: [
+                            {
+                                name: 'All About Electronics',
+                                subscribers: '700K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@allaboutelectronics',
+                                topics: 'Electronic Devices'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Complete Devices'
+                            },
+                            {
+                                name: 'ECE Academy',
+                                subscribers: '400K',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@ECEAcademy',
+                                topics: 'Semiconductor Devices'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Analog & Digital Circuits',
+                        topics: 9,
+                        subjects: [
+                            { name: 'Analog Electronics', weightage: '8-10%', videos: 50 },
+                            { name: 'Digital Electronics', weightage: '7-9%', videos: 45 },
+                            { name: 'Combinational Circuits', weightage: '5-7%', videos: 30 },
+                            { name: 'Sequential Circuits', weightage: '5-7%', videos: 30 },
+                            { name: 'Data Converters', weightage: '4-6%', videos: 25 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Gate Smashers',
+                                subscribers: '1.5M',
+                                videos: '120+',
+                                link: 'https://www.youtube.com/@GateSmashers',
+                                topics: 'Digital Electronics'
+                            },
+                            {
+                                name: 'The Organic Chemistry Tutor',
+                                subscribers: '5M',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@TheOrganicChemistryTutor',
+                                topics: 'Analog Circuits'
+                            },
+                            {
+                                name: 'Neso Academy',
+                                subscribers: '2.1M',
+                                videos: '100+',
+                                link: 'https://www.youtube.com/@nesoacademy',
+                                topics: 'Digital Circuits'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'mech',
+                name: 'Mechanical Engineering',
+                code: 'ME',
+                icon: 'fas fa-cogs',
+                color: 'mech',
+                sections: [
+                    {
+                        title: 'Engineering Mathematics',
+                        topics: 8,
+                        subjects: [
+                            { name: 'Linear Algebra', weightage: '5-7%', videos: 30 },
+                            { name: 'Calculus', weightage: '6-8%', videos: 35 },
+                            { name: 'Differential Equations', weightage: '5-7%', videos: 30 },
+                            { name: 'Probability & Statistics', weightage: '4-6%', videos: 25 },
+                            { name: 'Numerical Methods', weightage: '4-6%', videos: 25 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Engineering Mathematics'
+                            },
+                            {
+                                name: 'Unacademy GATE',
+                                subscribers: '800K',
+                                videos: '350+',
+                                link: 'https://www.youtube.com/@UnacademyGATE',
+                                topics: 'Complete Math'
+                            },
+                            {
+                                name: 'Dr. Gajendra Purohit',
+                                subscribers: '1.8M',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@DrGajendraPurohitMathematics',
+                                topics: 'Advanced Mathematics'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Applied Mechanics & Design',
+                        topics: 10,
+                        subjects: [
+                            { name: 'Engineering Mechanics', weightage: '8-10%', videos: 50 },
+                            { name: 'Strength of Materials', weightage: '9-11%', videos: 60 },
+                            { name: 'Machine Design', weightage: '7-9%', videos: 45 },
+                            { name: 'Theory of Machines', weightage: '8-10%', videos: 50 },
+                            { name: 'Vibrations', weightage: '5-7%', videos: 35 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Ekeeda',
+                                subscribers: '1.2M',
+                                videos: '500+',
+                                link: 'https://www.youtube.com/@Ekeeda_GATE',
+                                topics: 'Mechanics & Design'
+                            },
+                            {
+                                name: 'Lesics',
+                                subscribers: '6M',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@Lesics',
+                                topics: 'Mechanical Concepts'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Machine Design'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Fluid Mechanics & Thermal Sciences',
+                        topics: 9,
+                        subjects: [
+                            { name: 'Fluid Mechanics', weightage: '8-10%', videos: 50 },
+                            { name: 'Heat Transfer', weightage: '8-10%', videos: 50 },
+                            { name: 'Thermodynamics', weightage: '9-11%', videos: 60 },
+                            { name: 'Refrigeration', weightage: '5-7%', videos: 35 },
+                            { name: 'Power Plant Engineering', weightage: '4-6%', videos: 30 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Learn Engineering',
+                                subscribers: '4M',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@Lesics',
+                                topics: 'Thermal Sciences'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Fluid Mechanics'
+                            },
+                            {
+                                name: 'Ekeeda',
+                                subscribers: '1.2M',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@Ekeeda_GATE',
+                                topics: 'Thermodynamics'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Manufacturing & Industrial Engineering',
+                        topics: 7,
+                        subjects: [
+                            { name: 'Production Planning', weightage: '6-8%', videos: 40 },
+                            { name: 'Quality Control', weightage: '5-7%', videos: 35 },
+                            { name: 'Machining Processes', weightage: '7-9%', videos: 45 },
+                            { name: 'Casting & Welding', weightage: '5-7%', videos: 35 },
+                            { name: 'Metrology', weightage: '4-6%', videos: 30 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Academic Lesson',
+                                subscribers: '800K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@academiclesson',
+                                topics: 'Manufacturing Processes'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Industrial Engineering'
+                            },
+                            {
+                                name: 'Ekeeda',
+                                subscribers: '1.2M',
+                                videos: '250+',
+                                link: 'https://www.youtube.com/@Ekeeda_GATE',
+                                topics: 'Production Technology'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'civil',
+                name: 'Civil Engineering',
+                code: 'CE',
+                icon: 'fas fa-hard-hat',
+                color: 'civil',
+                sections: [
+                    {
+                        title: 'Engineering Mathematics',
+                        topics: 8,
+                        subjects: [
+                            { name: 'Linear Algebra', weightage: '5-7%', videos: 30 },
+                            { name: 'Calculus', weightage: '6-8%', videos: 35 },
+                            { name: 'Differential Equations', weightage: '5-7%', videos: 30 },
+                            { name: 'Probability & Statistics', weightage: '4-6%', videos: 25 },
+                            { name: 'Numerical Methods', weightage: '4-6%', videos: 25 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Engineering Mathematics'
+                            },
+                            {
+                                name: 'Unacademy GATE',
+                                subscribers: '800K',
+                                videos: '350+',
+                                link: 'https://www.youtube.com/@UnacademyGATE',
+                                topics: 'Complete Math'
+                            },
+                            {
+                                name: 'Dr. Gajendra Purohit',
+                                subscribers: '1.8M',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@DrGajendraPurohitMathematics',
+                                topics: 'Advanced Mathematics'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Structural Engineering',
+                        topics: 10,
+                        subjects: [
+                            { name: 'Mechanics of Materials', weightage: '9-11%', videos: 60 },
+                            { name: 'Structural Analysis', weightage: '10-12%', videos: 70 },
+                            { name: 'Concrete Technology', weightage: '8-10%', videos: 50 },
+                            { name: 'Steel Structures', weightage: '7-9%', videos: 45 },
+                            { name: 'RCC Design', weightage: '9-11%', videos: 60 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Engineering Funda',
+                                subscribers: '900K',
+                                videos: '400+',
+                                link: 'https://www.youtube.com/@EngineeringFunda',
+                                topics: 'Structural Engineering'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '300+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Structural Analysis'
+                            },
+                            {
+                                name: 'Civil Engineer Deepak Mali',
+                                subscribers: '500K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@CivilEngineerDeepakMali',
+                                topics: 'RCC Design'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Geotechnical Engineering',
+                        topics: 8,
+                        subjects: [
+                            { name: 'Soil Mechanics', weightage: '10-12%', videos: 65 },
+                            { name: 'Foundation Engineering', weightage: '8-10%', videos: 50 },
+                            { name: 'Earth Pressure', weightage: '6-8%', videos: 40 },
+                            { name: 'Soil Testing', weightage: '5-7%', videos: 35 },
+                            { name: 'Slope Stability', weightage: '5-7%', videos: 35 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Elementary Engineering',
+                                subscribers: '400K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@ElementaryEngineering',
+                                topics: 'Geotechnical Engineering'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '250+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Soil Mechanics'
+                            },
+                            {
+                                name: 'Civil Engineering Department - IIT Bombay',
+                                subscribers: '300K',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@CivilEngineeringIITB',
+                                topics: 'Advanced Geotech'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Water Resources Engineering',
+                        topics: 7,
+                        subjects: [
+                            { name: 'Fluid Mechanics', weightage: '8-10%', videos: 50 },
+                            { name: 'Hydraulics', weightage: '7-9%', videos: 45 },
+                            { name: 'Irrigation Engineering', weightage: '6-8%', videos: 40 },
+                            { name: 'Hydrology', weightage: '6-8%', videos: 40 },
+                            { name: 'Water Supply', weightage: '5-7%', videos: 35 }
+                        ],
+                        channels: [
+                            {
+                                name: 'Learn Civil Engineering',
+                                subscribers: '300K',
+                                videos: '150+',
+                                link: 'https://www.youtube.com/@LearnCivilEngineering',
+                                topics: 'Water Resources'
+                            },
+                            {
+                                name: 'Engineering Funda',
+                                subscribers: '900K',
+                                videos: '200+',
+                                link: 'https://www.youtube.com/@EngineeringFunda',
+                                topics: 'Fluid Mechanics'
+                            },
+                            {
+                                name: 'Gate Academy Plus',
+                                subscribers: '600K',
+                                videos: '180+',
+                                link: 'https://www.youtube.com/@GateAcademyPlus',
+                                topics: 'Hydrology & Irrigation'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // Global variables
+        let currentBranch = 'cse';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBranches();
+            loadBranchSyllabus('cse');
+            setupEventListeners();
+            animateElements();
+        });
+
+        function loadBranches() {
+            const branchesList = document.getElementById('branchesList');
+            branchesList.innerHTML = branches.map(branch => `
+                <div class="branch-item" onclick="loadBranchSyllabus('${branch.id}')">
+                    <div class="branch-icon ${branch.color}">
+                        <i class="${branch.icon}"></i>
+                    </div>
+                    <div class="branch-name">${branch.name}</div>
+                </div>
+            `).join('');
+            
+            // Set first branch as active
+            document.querySelector('.branch-item').classList.add('active');
+        }
+
+        function loadBranchSyllabus(branchId) {
+            currentBranch = branchId;
+            const branch = branches.find(b => b.id === branchId);
+            
+            // Update active branch
+            document.querySelectorAll('.branch-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Update title and GATE code
+            document.getElementById('selectedBranchTitle').textContent = branch.name;
+            document.getElementById('gateCode').textContent = `GATE Code: ${branch.code}`;
+            
+            // Load syllabus sections
+            loadSyllabusSections(branch.sections);
+        }
+
+        function loadSyllabusSections(sections) {
+            const syllabusSections = document.getElementById('syllabusSections');
+            syllabusSections.innerHTML = sections.map((section, index) => `
+                <div class="section-card animate-in" style="animation-delay: ${index * 0.1}s">
+                    <div class="section-header">
+                        <h3 class="section-title">${section.title}</h3>
+                        <span class="topic-count">${section.topics} Topics</span>
+                    </div>
+                    
+                    <div class="topics-grid">
+                        ${section.subjects.map(topic => `
+                            <div class="topic-item">
+                                <div class="topic-name">${topic.name}</div>
+                                <div class="topic-weightage">Weightage: ${topic.weightage}</div>
+                                <div style="font-size: 0.8rem; color: #666;">
+                                    <i class="fas fa-video"></i> ${topic.videos}+ Videos Available
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="youtube-channels">
+                        <h4 class="channels-title">
+                            <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                            Recommended YouTube Channels
+                        </h4>
+                        
+                        <div class="channels-list">
+                            ${section.channels.map(channel => `
+                                <div class="channel-card">
+                                    <div class="channel-header">
+                                        <div class="channel-icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </div>
+                                        <div class="channel-name">${channel.name}</div>
+                                    </div>
+                                    
+                                    <div class="channel-stats">
+                                        <div class="stat">
+                                            <i class="fas fa-users"></i>
+                                            ${channel.subscribers}
+                                        </div>
+                                        <div class="stat">
+                                            <i class="fas fa-video"></i>
+                                            ${channel.videos}
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
+                                        Covers: ${channel.topics}
+                                    </div>
+                                    
+                                    <a href="${channel.link}" target="_blank" class="channel-link">
+                                        <i class="fab fa-youtube"></i>
+                                        Visit Channel
+                                    </a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setupEventListeners() {
+            // Start Preparation Button
+            document.querySelector('.cta-button').addEventListener('click', function() {
+                const branch = branches.find(b => b.id === currentBranch);
+                alert(`Starting GATE ${branch.code} Preparation\n\nBranch: ${branch.name}\n\nWe'll redirect you to the study plan and resources.`);
+            });
+
+            // Resource links
+            document.querySelectorAll('.resource-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const resource = this.closest('.resource-card').querySelector('.resource-title').textContent;
+                    alert(`Downloading ${resource}...\n\nThis would typically download a PDF or redirect to the resource page.`);
+                });
+            });
+        }
+
+        function animateElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.resource-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
