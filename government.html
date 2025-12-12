@@ -1,0 +1,1914 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTech Career Navigator | Government Job Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #1a237e;
+            --secondary: #3949ab;
+            --accent: #00acc1;
+            --govt-color: #1e6b52;
+            --govt-light: #4ade80;
+            --light: #f5f5f5;
+            --dark: #0d47a1;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f2ff 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--govt-color), #2e8b57);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            color: var(--govt-color);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 14px;
+            color: var(--govt-color);
+            font-weight: 500;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--govt-color);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: #2e8b57;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--govt-light);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--govt-color), #2e8b57);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(30, 107, 82, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(rgba(30, 107, 82, 0.9), rgba(46, 139, 87, 0.9)), 
+                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 50px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50px;
+            padding: 15px 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: transparent;
+            color: #333;
+        }
+
+        .search-box button {
+            background: var(--govt-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background: #2e8b57;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        /* Branches Sidebar */
+        .branches-sidebar {
+            flex: 0 0 300px;
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            border: 2px solid var(--govt-color);
+        }
+
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--govt-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(30, 107, 82, 0.2);
+        }
+
+        .branch-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .branch-item:hover {
+            background: rgba(30, 107, 82, 0.05);
+            transform: translateX(5px);
+            border-color: var(--govt-light);
+        }
+
+        .branch-item.active {
+            background: linear-gradient(135deg, var(--govt-color), #2e8b57);
+            color: white;
+            border-color: var(--govt-color);
+        }
+
+        .branch-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            background: var(--govt-color);
+        }
+
+        .branch-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Jobs Content */
+        .jobs-content {
+            flex: 1;
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--govt-color);
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(30, 107, 82, 0.2);
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            color: var(--govt-color);
+        }
+
+        .jobs-count {
+            background: rgba(30, 107, 82, 0.1);
+            color: var(--govt-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .job-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .job-card {
+            border: 2px solid var(--govt-light);
+            border-radius: var(--radius);
+            padding: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 107, 82, 0.15);
+            border-color: var(--govt-color);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--govt-color);
+        }
+
+        .job-type {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(30, 107, 82, 0.1);
+            color: var(--govt-color);
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--govt-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .job-company {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .job-company i {
+            color: var(--govt-color);
+        }
+
+        .job-details {
+            margin-bottom: 20px;
+        }
+
+        .job-details p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .job-details i {
+            color: var(--govt-color);
+            width: 20px;
+        }
+
+        .job-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: rgba(30, 107, 82, 0.1);
+            color: var(--govt-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(30, 107, 82, 0.2);
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--govt-color);
+            color: white;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            background: #2e8b57;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--govt-color);
+            color: var(--govt-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--govt-color);
+            color: white;
+        }
+
+        /* Statistics */
+        .stats {
+            padding: 80px 0;
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: 50px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--govt-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--govt-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--govt-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--govt-color);
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--govt-light);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            border: 3px solid var(--govt-color);
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--govt-color), #2e8b57);
+            color: white;
+            border-radius: 12px 12px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* Government Badge */
+        .govt-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(30, 107, 82, 0.1);
+            color: var(--govt-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(30, 107, 82, 0.3);
+        }
+
+        /* Syllabus Table */
+        .syllabus-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .syllabus-table th {
+            background: var(--govt-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .syllabus-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .syllabus-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .syllabus-table tr:hover {
+            background: #f0f9f0;
+        }
+
+        .syllabus-table .weightage {
+            font-weight: 600;
+            color: var(--govt-color);
+        }
+
+        .youtube-channel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #fff5f5;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #ff0000;
+        }
+
+        .youtube-channel i {
+            color: #ff0000;
+            font-size: 20px;
+        }
+
+        .youtube-channel a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .youtube-channel a:hover {
+            color: var(--govt-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .branches-sidebar {
+                position: static;
+                flex: none;
+                width: 100%;
+            }
+            
+            .job-cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+                border-radius: 15px;
+            }
+            
+            .search-box input, .search-box button {
+                width: 100%;
+            }
+            
+            .job-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .syllabus-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .content-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .job-card, .branch-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>GovTech Career Navigator</h1>
+                        <span>Government Job Portal for Engineers</span>
+                    </div>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="#"><i class="fas fa-home"></i> Home</a>
+                    <a href="#branches"><i class="fas fa-code-branch"></i> Branches</a>
+                    <a href="#jobs"><i class="fas fa-briefcase"></i> Government Jobs</a>
+                    <a href="#exams"><i class="fas fa-file-alt"></i> Exams</a>
+                    <a href="#psus"><i class="fas fa-industry"></i> PSUs</a>
+                    <button class="cta-button">
+                        <a href="gate.html"><i class="fas fa-user-graduate"></i>
+                        GATE Preparation</a>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Government Engineering Jobs</h2>
+            <p>Find all government job opportunities for BTech graduates across PSUs, departments, and public services.</p>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search government jobs by branch or department...">
+                <button>Find Government Jobs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content" id="branches">
+            <!-- Branches Sidebar -->
+            <div class="branches-sidebar">
+                <h3 class="sidebar-title">Engineering Branches</h3>
+                <div id="branchesList">
+                    <!-- Branches will be loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Jobs Content -->
+            <div class="jobs-content">
+                <div class="content-header">
+                    <h2 id="selectedBranchTitle">Computer Science & Engineering - Government Jobs</h2>
+                    <span class="jobs-count" id="jobCount">Loading Government Jobs...</span>
+                </div>
+                
+                <div class="job-cards-grid" id="jobsGrid">
+                    <!-- Government Jobs will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Engineering Branches</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">PSUs & Departments</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Government Positions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">GATE</div>
+                    <div class="stat-label">Primary Entrance Exam</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GovTech Career Navigator</h4>
+                    <p>Your comprehensive guide to government engineering career opportunities across PSUs, departments, and public services.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Government PSUs</h4>
+                    <ul>
+                        <li><a href="#">BHEL, NTPC, POWERGRID</a></li>
+                        <li><a href="#">ONGC, GAIL, IOCL</a></li>
+                        <li><a href="#">ISRO, DRDO, HAL</a></li>
+                        <li><a href="#">SAIL, CIL, NMDC</a></li>
+                        <li><a href="#">Railway Engineering</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Government Exams</h4>
+                    <ul>
+                        <li><a href="gate.html">GATE Examination</a></li>
+                        <li><a href="#">Engineering Services (ESE)</a></li>
+                        <li><a href="#">SSC JE</a></li>
+                        <li><a href="#">State PSC Exams</a></li>
+                        <li><a href="#">PSU Recruitment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> govjobs@careernavigator.gov.in</li>
+                        <li><i class="fas fa-phone"></i> 1800-123-4567 (Govt Helpline)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GovTech Career Navigator. Official Government Career Guidance Platform.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Details Modal -->
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 id="modalJobTitle">Government Job Title</h2>
+                <p id="modalJobCompany">Government Department/PSU</p>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive Syllabus Data with Weightage and YouTube Channels
+        const syllabusData = {
+            cse: {
+                "Software Engineer": {
+                    topics: [
+                        { topic: "Data Structures & Algorithms", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Programming Languages (C/C++/Java)", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Operating Systems", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Database Management Systems", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Computer Networks", weightage: "10%", marks: "10/100", difficulty: "Medium" },
+                        { topic: "Software Engineering", weightage: "8%", marks: "8/100", difficulty: "Low" },
+                        { topic: "Discrete Mathematics", weightage: "7%", marks: "7/100", difficulty: "High" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Gate Smashers", url: "https://youtube.com/c/GateSmashers", focus: "Core CS Subjects" },
+                        { name: "Abdul Bari", url: "https://youtube.com/c/AbdulBari", focus: "Algorithms & Programming" },
+                        { name: "Neso Academy", url: "https://youtube.com/c/NesoAcademy", focus: "Theory & Concepts" },
+                        { name: "Jenny's Lectures", url: "https://youtube.com/c/JennyslecturesCSITNETJRF", focus: "Complete CS Syllabus" }
+                    ]
+                },
+                "Systems Analyst": {
+                    topics: [
+                        { topic: "System Analysis & Design", weightage: "30%", marks: "30/100", difficulty: "Medium" },
+                        { topic: "Database Systems", weightage: "25%", marks: "25/100", difficulty: "Medium" },
+                        { topic: "Software Engineering", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Networking & Security", weightage: "15%", marks: "15/100", difficulty: "High" },
+                        { topic: "Project Management", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Edureka!", url: "https://youtube.com/c/edurekaIN", focus: "System Design" },
+                        { name: "Tech With Tim", url: "https://youtube.com/c/TechWithTim", focus: "Practical System Analysis" },
+                        { name: "Simplilearn", url: "https://youtube.com/c/SimplilearnOfficial", focus: "Professional Courses" }
+                    ]
+                },
+                "Cyber Security Analyst": {
+                    topics: [
+                        { topic: "Network Security", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Cryptography", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Ethical Hacking", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Digital Forensics", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Cyber Laws", weightage: "10%", marks: "10/100", difficulty: "Low" },
+                        { topic: "Incident Response", weightage: "10%", marks: "10/100", difficulty: "Medium" }
+                    ],
+                    youtubeChannels: [
+                        { name: "NetworkChuck", url: "https://youtube.com/c/NetworkChuck", focus: "Cyber Security & Networking" },
+                        { name: "David Bombal", url: "https://youtube.com/c/DavidBombal", focus: "Security & Ethical Hacking" },
+                        { name: "The Cyber Mentor", url: "https://youtube.com/c/TheCyberMentor", focus: "Practical Security" }
+                    ]
+                },
+                "Database Administrator": {
+                    topics: [
+                        { topic: "SQL & PL/SQL", weightage: "30%", marks: "30/100", difficulty: "Medium" },
+                        { topic: "Database Design", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Oracle/MySQL Administration", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Backup & Recovery", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Performance Tuning", weightage: "10%", marks: "10/100", difficulty: "High" }
+                    ],
+                    youtubeChannels: [
+                        { name: "FreeCodeCamp", url: "https://youtube.com/c/FreeCodeCamp", focus: "Database & SQL" },
+                        { name: "TechTFQ", url: "https://youtube.com/c/TechTFQ", focus: "SQL & Database Concepts" },
+                        { name: "Kudvenkat", url: "https://youtube.com/c/Csharp-video-tutorialsBlogspot", focus: "SQL Server" }
+                    ]
+                }
+            },
+            ece: {
+                "Electronics Engineer": {
+                    topics: [
+                        { topic: "Digital Electronics", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Analog Circuits", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Signals & Systems", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Communication Systems", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Electromagnetic Theory", weightage: "10%", marks: "10/100", difficulty: "High" },
+                        { topic: "Control Systems", weightage: "10%", marks: "10/100", difficulty: "Medium" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Gate Academy", url: "https://youtube.com/c/GateAcademy", focus: "ECE Core Subjects" },
+                        { name: "ECE Academy", url: "https://youtube.com/c/ECEAcademy", focus: "Electronics Concepts" },
+                        { name: "Neso Academy", url: "https://youtube.com/c/NesoAcademy", focus: "ECE Fundamentals" }
+                    ]
+                },
+                "Communication Engineer": {
+                    topics: [
+                        { topic: "Communication Systems", weightage: "30%", marks: "30/100", difficulty: "High" },
+                        { topic: "Digital Communication", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Antenna & Wave Propagation", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Optical Communication", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Satellite Communication", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Engineering Made Easy", url: "https://youtube.com/c/EngineeringMadeEasy", focus: "Communication Systems" },
+                        { name: "Tutorials Point", url: "https://youtube.com/c/TutorialsPoint", focus: "Telecom Concepts" }
+                    ]
+                },
+                "Radar Engineer": {
+                    topics: [
+                        { topic: "Radar Systems", weightage: "30%", marks: "30/100", difficulty: "High" },
+                        { topic: "Microwave Engineering", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Antenna Design", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Signal Processing", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Defense Systems", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "MIT OpenCourseWare", url: "https://youtube.com/c/mitocw", focus: "Advanced Radar Systems" },
+                        { name: "IIT Lectures", url: "https://youtube.com/c/IITLectures", focus: "Microwave & Radar" }
+                    ]
+                },
+                "Broadcast Engineer": {
+                    topics: [
+                        { topic: "Broadcast Systems", weightage: "30%", marks: "30/100", difficulty: "Medium" },
+                        { topic: "TV Transmission", weightage: "25%", marks: "25/100", difficulty: "Medium" },
+                        { topic: "Satellite Communication", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Audio-Video Engineering", weightage: "15%", marks: "15/100", difficulty: "Low" },
+                        { topic: "Maintenance Procedures", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Society of Broadcast Engineers", url: "https://youtube.com/c/SocietyofBroadcastEngineers", focus: "Broadcast Technology" },
+                        { name: "LearnTVProduction", url: "https://youtube.com/c/LearnTVProduction", focus: "TV Engineering" }
+                    ]
+                }
+            },
+            eee: {
+                "Electrical Engineer": {
+                    topics: [
+                        { topic: "Power Systems", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Electrical Machines", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Power Electronics", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Control Systems", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Electrical Measurements", weightage: "10%", marks: "10/100", difficulty: "Low" },
+                        { topic: "Switchgear & Protection", weightage: "10%", marks: "10/100", difficulty: "Medium" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Gate Academy", url: "https://youtube.com/c/GateAcademy", focus: "EEE Core Subjects" },
+                        { name: "Neso Academy", url: "https://youtube.com/c/NesoAcademy", focus: "Electrical Fundamentals" },
+                        { name: "Engineering Funda", url: "https://youtube.com/c/EngineeringFunda", focus: "Power Systems" }
+                    ]
+                },
+                "Power Systems Engineer": {
+                    topics: [
+                        { topic: "Power System Analysis", weightage: "30%", marks: "30/100", difficulty: "High" },
+                        { topic: "Transmission & Distribution", weightage: "25%", marks: "25/100", difficulty: "Medium" },
+                        { topic: "Power System Protection", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Substation Design", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Grid Operations", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Power System Operation", url: "https://youtube.com/c/PowerSystemOperation", focus: "Grid Management" },
+                        { name: "Electrical Guruji", url: "https://youtube.com/c/ElectricalGuruji", focus: "Practical Power Systems" }
+                    ]
+                },
+                "Instrumentation Engineer": {
+                    topics: [
+                        { topic: "Process Control", weightage: "30%", marks: "30/100", difficulty: "High" },
+                        { topic: "Instrumentation Systems", weightage: "25%", marks: "25/100", difficulty: "Medium" },
+                        { topic: "DCS & PLC", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Measurement Systems", weightage: "15%", marks: "15/100", difficulty: "Low" },
+                        { topic: "Industrial Automation", weightage: "10%", marks: "10/100", difficulty: "Medium" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Instrumentation Tools", url: "https://youtube.com/c/InstrumentationTools", focus: "Instrumentation Basics" },
+                        { name: "RealPars", url: "https://youtube.com/c/RealPars", focus: "PLC & Automation" }
+                    ]
+                }
+            },
+            mech: {
+                "Mechanical Engineer": {
+                    topics: [
+                        { topic: "Thermodynamics", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Strength of Materials", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Machine Design", weightage: "18%", marks: "18/100", difficulty: "Medium" },
+                        { topic: "Fluid Mechanics", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Manufacturing Processes", weightage: "15%", marks: "15/100", difficulty: "Low" },
+                        { topic: "Theory of Machines", weightage: "12%", marks: "12/100", difficulty: "Medium" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Gate Academy", url: "https://youtube.com/c/GateAcademy", focus: "Mechanical Core" },
+                        { name: "Lesics", url: "https://youtube.com/c/Lesics", focus: "Engineering Concepts" },
+                        { name: "Ekeeda", url: "https://youtube.com/c/Ekeeda", focus: "Mechanical Subjects" }
+                    ]
+                },
+                "Production Engineer": {
+                    topics: [
+                        { topic: "Production Planning", weightage: "25%", marks: "25/100", difficulty: "Medium" },
+                        { topic: "Quality Control", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Manufacturing Technology", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Industrial Engineering", weightage: "15%", marks: "15/100", difficulty: "Medium" },
+                        { topic: "Operations Management", weightage: "10%", marks: "10/100", difficulty: "Low" },
+                        { topic: "Lean Manufacturing", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Tata Steel", url: "https://youtube.com/c/TataSteel", focus: "Production Processes" },
+                        { name: "MIT OpenCourseWare", url: "https://youtube.com/c/mitocw", focus: "Manufacturing" }
+                    ]
+                }
+            },
+            civil: {
+                "Civil Engineer": {
+                    topics: [
+                        { topic: "Structural Analysis", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "RCC Design", weightage: "20%", marks: "20/100", difficulty: "High" },
+                        { topic: "Geotechnical Engineering", weightage: "18%", marks: "18/100", difficulty: "Medium" },
+                        { topic: "Surveying", weightage: "15%", marks: "15/100", difficulty: "Low" },
+                        { topic: "Construction Management", weightage: "12%", marks: "12/100", difficulty: "Medium" },
+                        { topic: "Environmental Engineering", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Gate Academy", url: "https://youtube.com/c/GateAcademy", focus: "Civil Engineering" },
+                        { name: "Structures Simplified", url: "https://youtube.com/c/StructuresSimplified", focus: "Structural Design" },
+                        { name: "Practical Engineering", url: "https://youtube.com/c/PracticalEngineeringChannel", focus: "Civil Concepts" }
+                    ]
+                }
+            },
+            it: {
+                "IT Officer": {
+                    topics: [
+                        { topic: "Banking Systems", weightage: "30%", marks: "30/100", difficulty: "Medium" },
+                        { topic: "Networking", weightage: "25%", marks: "25/100", difficulty: "High" },
+                        { topic: "Database Management", weightage: "20%", marks: "20/100", difficulty: "Medium" },
+                        { topic: "Cyber Security", weightage: "15%", marks: "15/100", difficulty: "High" },
+                        { topic: "IT Governance", weightage: "10%", marks: "10/100", difficulty: "Low" }
+                    ],
+                    youtubeChannels: [
+                        { name: "Banking Awareness", url: "https://youtube.com/c/BankingAwareness", focus: "Banking Systems" },
+                        { name: "NetworkChuck", url: "https://youtube.com/c/NetworkChuck", focus: "Networking" },
+                        { name: "Simplilearn", url: "https://youtube.com/c/SimplilearnOfficial", focus: "IT Professional" }
+                    ]
+                }
+            }
+        };
+
+        // Comprehensive BTech Branches Data with Government Jobs Only
+        const branches = [
+            {
+                id: 'cse',
+                name: 'Computer Science & Engineering',
+                icon: 'fas fa-laptop-code',
+                govtJobs: [
+                    {
+                        id: 1,
+                        title: 'Software Engineer',
+                        company: 'ISRO - Indian Space Research Organisation',
+                        salary: '₹8-25 LPA + Allowances',
+                        location: 'Bangalore, Hyderabad, Ahmedabad',
+                        experience: '0-3 years',
+                        type: 'Scientist/Engineer',
+                        skills: ['C++', 'Java', 'Python', 'Algorithms', 'Space Technology'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Government Accommodation, Medical, Pension'
+                    },
+                    {
+                        id: 2,
+                        title: 'Systems Analyst',
+                        company: 'NIC - National Informatics Centre',
+                        salary: '₹7-22 LPA',
+                        location: 'Delhi, State Capitals',
+                        experience: '1-3 years',
+                        type: 'Technical Officer',
+                        skills: ['System Analysis', 'Database', 'Networking', 'Government Systems'],
+                        exam: 'Direct Recruitment',
+                        benefits: 'HRA, TA, Medical Benefits'
+                    },
+                    {
+                        id: 3,
+                        title: 'Cyber Security Analyst',
+                        company: 'DRDO - Defense Research & Development',
+                        salary: '₹9-28 LPA + Security Allowance',
+                        location: 'Delhi, Bangalore, Hyderabad',
+                        experience: '2-4 years',
+                        type: 'Scientist B',
+                        skills: ['Cybersecurity', 'Network Security', 'Cryptography', 'Defense Systems'],
+                        exam: 'DRDO Entrance Test',
+                        benefits: 'Defense Benefits, Housing, Security'
+                    },
+                    {
+                        id: 4,
+                        title: 'Database Administrator',
+                        company: 'RBI - Reserve Bank of India',
+                        salary: '₹10-30 LPA',
+                        location: 'Mumbai, Delhi, Regional Offices',
+                        experience: '2-5 years',
+                        type: 'Assistant Manager',
+                        skills: ['Oracle DBA', 'SQL Server', 'Banking Systems', 'Security'],
+                        exam: 'RBI Grade B',
+                        benefits: 'Banking Benefits, Pension, Housing'
+                    }
+                ]
+            },
+            {
+                id: 'ece',
+                name: 'Electronics & Communication',
+                icon: 'fas fa-microchip',
+                govtJobs: [
+                    {
+                        id: 5,
+                        title: 'Electronics Engineer',
+                        company: 'ISRO Satellite Centre',
+                        salary: '₹9-26 LPA + Space Allowance',
+                        location: 'Bangalore, Sriharikota',
+                        experience: '0-3 years',
+                        type: 'Scientist/Engineer SC',
+                        skills: ['Embedded Systems', 'VLSI', 'Signal Processing', 'Satellite Tech'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Accommodation, Medical, Space Benefits'
+                    },
+                    {
+                        id: 6,
+                        title: 'Communication Engineer',
+                        company: 'BSNL - Bharat Sanchar Nigam Ltd',
+                        salary: '₹8-24 LPA',
+                        location: 'Pan India',
+                        experience: '0-3 years',
+                        type: 'Junior Telecom Officer',
+                        skills: ['Telecom Networks', 'Wireless Communication', 'Fiber Optics', 'Maintenance'],
+                        exam: 'BSNL JTO',
+                        benefits: 'Telecom Benefits, Housing, Medical'
+                    },
+                    {
+                        id: 7,
+                        title: 'Radar Engineer',
+                        company: 'Indian Air Force',
+                        salary: '₹10-30 LPA + Military Benefits',
+                        location: 'Air Force Stations',
+                        experience: '1-4 years',
+                        type: 'Technical Officer',
+                        skills: ['Radar Systems', 'RF Engineering', 'Signal Processing', 'Defense Systems'],
+                        exam: 'AFCAT',
+                        benefits: 'Military Benefits, Accommodation, Pension'
+                    },
+                    {
+                        id: 8,
+                        title: 'Broadcast Engineer',
+                        company: 'Doordarshan (Prasar Bharati)',
+                        salary: '₹7-20 LPA',
+                        location: 'Delhi, Regional Centers',
+                        experience: '1-3 years',
+                        type: 'Engineer',
+                        skills: ['Broadcast Systems', 'TV Transmission', 'Satellite Communication', 'Maintenance'],
+                        exam: 'Direct Recruitment',
+                        benefits: 'Government Housing, Medical, Pension'
+                    }
+                ]
+            },
+            {
+                id: 'eee',
+                name: 'Electrical & Electronics',
+                icon: 'fas fa-bolt',
+                govtJobs: [
+                    {
+                        id: 9,
+                        title: 'Electrical Engineer',
+                        company: 'NTPC - National Thermal Power Corp',
+                        salary: '₹10-28 LPA + Plant Allowance',
+                        location: 'Power Plants Nationwide',
+                        experience: '0-3 years',
+                        type: 'Executive Trainee',
+                        skills: ['Power Systems', 'Thermal Plants', 'Transmission', 'Maintenance'],
+                        exam: 'GATE + GD/Interview',
+                        benefits: 'Plant Accommodation, Medical, Pension'
+                    },
+                    {
+                        id: 10,
+                        title: 'Power Systems Engineer',
+                        company: 'POWERGRID - Power Grid Corporation',
+                        salary: '₹11-30 LPA',
+                        location: 'Transmission Projects',
+                        experience: '0-3 years',
+                        type: 'Executive Trainee',
+                        skills: ['Power Transmission', 'Grid Management', 'Substations', 'Protection'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Field Allowance, Housing, Medical'
+                    },
+                    {
+                        id: 11,
+                        title: 'Instrumentation Engineer',
+                        company: 'ONGC - Oil & Natural Gas Corp',
+                        salary: '₹12-35 LPA + Offshore Allowance',
+                        location: 'Mumbai, Offshore Platforms',
+                        experience: '1-3 years',
+                        type: 'Graduate Trainee',
+                        skills: ['Process Control', 'Instrumentation', 'DCS', 'Oil & Gas'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Offshore Benefits, Housing, Medical'
+                    },
+                    {
+                        id: 12,
+                        title: 'Power Plant Engineer',
+                        company: 'NHPC - National Hydroelectric Corp',
+                        salary: '₹9-25 LPA',
+                        location: 'Hydro Projects',
+                        experience: '1-4 years',
+                        type: 'Engineer',
+                        skills: ['Hydro Power', 'Turbines', 'Generators', 'Maintenance'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Project Housing, Medical, Pension'
+                    }
+                ]
+            },
+            {
+                id: 'mech',
+                name: 'Mechanical Engineering',
+                icon: 'fas fa-cogs',
+                govtJobs: [
+                    {
+                        id: 13,
+                        title: 'Mechanical Engineer',
+                        company: 'Indian Railways',
+                        salary: '₹9-26 LPA + Railway Benefits',
+                        location: 'Railway Workshops',
+                        experience: '0-3 years',
+                        type: 'Junior Engineer',
+                        skills: ['Locomotives', 'Rolling Stock', 'Maintenance', 'Workshop'],
+                        exam: 'RRB JE',
+                        benefits: 'Railway Quarters, Passes, Medical'
+                    },
+                    {
+                        id: 14,
+                        title: 'Production Engineer',
+                        company: 'BHEL - Bharat Heavy Electricals',
+                        salary: '₹10-28 LPA',
+                        location: 'Bhopal, Hyderabad, Tiruchi',
+                        experience: '0-3 years',
+                        type: 'Engineer Trainee',
+                        skills: ['Heavy Machinery', 'Manufacturing', 'Quality Control', 'Production'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Company Housing, Medical, Pension'
+                    },
+                    {
+                        id: 15,
+                        title: 'Design Engineer',
+                        company: 'DRDO - Aeronautics',
+                        salary: '₹11-32 LPA',
+                        location: 'Bangalore, Hyderabad',
+                        experience: '1-4 years',
+                        type: 'Scientist B',
+                        skills: ['Aircraft Design', 'CAD', 'Structural Analysis', 'Defense'],
+                        exam: 'DRDO SET',
+                        benefits: 'Defense Housing, Medical, Pension'
+                    },
+                    {
+                        id: 16,
+                        title: 'Maintenance Engineer',
+                        company: 'HAL - Hindustan Aeronautics',
+                        salary: '₹10-30 LPA',
+                        location: 'Bangalore, Nasik, Lucknow',
+                        experience: '1-3 years',
+                        type: 'Management Trainee',
+                        skills: ['Aircraft Maintenance', 'Aviation', 'Quality', 'Safety'],
+                        exam: 'HAL Management Trainee',
+                        benefits: 'Company Quarters, Medical, Pension'
+                    }
+                ]
+            },
+            {
+                id: 'civil',
+                name: 'Civil Engineering',
+                icon: 'fas fa-hard-hat',
+                govtJobs: [
+                    {
+                        id: 17,
+                        title: 'Civil Engineer',
+                        company: 'CPWD - Central Public Works Dept',
+                        salary: '₹8-24 LPA',
+                        location: 'Delhi, State Capitals',
+                        experience: '0-3 years',
+                        type: 'Junior Engineer',
+                        skills: ['Construction', 'Design', 'Estimation', 'Government Projects'],
+                        exam: 'SSC JE',
+                        benefits: 'Government Housing, Medical, Pension'
+                    },
+                    {
+                        id: 18,
+                        title: 'Structural Engineer',
+                        company: 'NHAI - National Highways Authority',
+                        salary: '₹10-30 LPA',
+                        location: 'Highway Projects',
+                        experience: '1-3 years',
+                        type: 'Assistant Engineer',
+                        skills: ['Bridge Design', 'Highway Structures', 'ETABS', 'STAAD'],
+                        exam: 'GATE + Interview',
+                        benefits: 'Site Allowance, Housing, Medical'
+                    },
+                    {
+                        id: 19,
+                        title: 'Irrigation Engineer',
+                        company: 'Water Resources Department',
+                        salary: '₹7-22 LPA',
+                        location: 'State Projects',
+                        experience: '0-3 years',
+                        type: 'Assistant Engineer',
+                        skills: ['Canals', 'Dams', 'Irrigation', 'Water Management'],
+                        exam: 'State PSC',
+                        benefits: 'Government Quarters, Medical, Pension'
+                    },
+                    {
+                        id: 20,
+                        title: 'Town Planning Engineer',
+                        company: 'Municipal Corporations',
+                        salary: '₹8-25 LPA',
+                        location: 'Metro Cities',
+                        experience: '1-3 years',
+                        type: 'Town Planner',
+                        skills: ['Urban Planning', 'GIS', 'Building Codes', 'Development'],
+                        exam: 'State PSC',
+                        benefits: 'Municipal Housing, Medical, Pension'
+                    }
+                ]
+            },
+            {
+                id: 'it',
+                name: 'Information Technology',
+                icon: 'fas fa-server',
+                govtJobs: [
+                    {
+                        id: 21,
+                        title: 'IT Officer',
+                        company: 'State Bank of India',
+                        salary: '₹12-35 LPA',
+                        location: 'Mumbai, Metro Cities',
+                        experience: '1-3 years',
+                        type: 'Assistant Manager',
+                        skills: ['Banking Systems', 'Networking', 'Security', 'Database'],
+                        exam: 'SBI PO',
+                        benefits: 'Banking Benefits, Housing, Pension'
+                    },
+                    {
+                        id: 22,
+                        title: 'System Administrator',
+                        company: 'Government Data Centers',
+                        salary: '₹9-26 LPA',
+                        location: 'Delhi, State Capitals',
+                        experience: '1-3 years',
+                        type: 'Technical Officer',
+                        skills: ['Windows Server', 'Linux', 'Virtualization', 'Data Center'],
+                        exam: 'Direct Recruitment',
+                        benefits: 'Government Housing, Medical, Pension'
+                    },
+                    {
+                        id: 23,
+                        title: 'Network Security Officer',
+                        company: 'CERT-In (Govt of India)',
+                        salary: '₹11-34 LPA',
+                        location: 'Delhi',
+                        experience: '2-4 years',
+                        type: 'Security Analyst',
+                        skills: ['Network Security', 'Cyber Defense', 'Incident Response', 'Forensics'],
+                        exam: 'Direct Recruitment',
+                        benefits: 'Government Benefits, Housing, Security'
+                    },
+                    {
+                        id: 24,
+                        title: 'ERP Consultant',
+                        company: 'Government Departments',
+                        salary: '₹10-30 LPA',
+                        location: 'Delhi, State Capitals',
+                        experience: '2-5 years',
+                        type: 'Consultant',
+                        skills: ['SAP', 'Oracle EBS', 'Government Processes', 'Implementation'],
+                        exam: 'Direct Recruitment',
+                        benefits: 'Consultant Benefits, Housing, Medical'
+                    }
+                ]
+            }
+        ];
+
+        // Global variables
+        let currentBranch = 'cse';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBranches();
+            loadAllJobs();
+            setupEventListeners();
+            showBranchJobs('cse');
+        });
+
+        function loadAllJobs() {
+            // All jobs are government jobs only
+            console.log('Loaded all government jobs');
+        }
+
+        function loadBranches() {
+            const branchesList = document.getElementById('branchesList');
+            branchesList.innerHTML = branches.map(branch => `
+                <div class="branch-item" onclick="showBranchJobs('${branch.id}')">
+                    <div class="branch-icon">
+                        <i class="${branch.icon}"></i>
+                    </div>
+                    <div class="branch-name">${branch.name}</div>
+                </div>
+            `).join('');
+            
+            // Set first branch as active
+            document.querySelector('.branch-item').classList.add('active');
+        }
+
+        function showBranchJobs(branchId) {
+            currentBranch = branchId;
+            const branch = branches.find(b => b.id === branchId);
+            
+            // Update active branch
+            document.querySelectorAll('.branch-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Update title and job count
+            document.getElementById('selectedBranchTitle').textContent = 
+                `${branch.name} - Government Jobs`;
+            document.getElementById('jobCount').textContent = `${branch.govtJobs.length} Government Jobs`;
+            
+            // Load government jobs
+            loadGovtJobs(branch.govtJobs);
+        }
+
+        function loadGovtJobs(jobs) {
+            const jobsGrid = document.getElementById('jobsGrid');
+            jobsGrid.innerHTML = jobs.map(job => `
+                <div class="job-card">
+                    <span class="job-type">${job.type}</span>
+                    <h3 class="job-title">${job.title}</h3>
+                    <p class="job-company">
+                        <i class="fas fa-landmark"></i> 
+                        ${job.company}
+                        <span class="govt-badge" style="margin-left: 10px;">
+                            <i class="fas fa-shield-alt"></i> Government
+                        </span>
+                    </p>
+                    
+                    <div class="job-details">
+                        <p><i class="fas fa-money-bill-wave"></i> Salary: ${job.salary}</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Location: ${job.location}</p>
+                        <p><i class="fas fa-briefcase"></i> Experience: ${job.experience}</p>
+                        <p><i class="fas fa-file-alt"></i> Exam: ${job.exam}</p>
+                    </div>
+                    
+                    <div class="job-skills">
+                        ${job.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                    
+                    <div class="job-actions">
+                        <button class="btn btn-primary" onclick="showJobDetails(${job.id})">
+                            <i class="fas fa-eye"></i> View Details
+                        </button>
+                        <button class="btn btn-secondary" onclick="applyForJob(${job.id})">
+                            <i class="fas fa-file-import"></i> Apply Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showJobDetails(jobId) {
+            // Find job in all branches
+            let job = null;
+            let branchName = '';
+            let branchId = '';
+            
+            for (const branch of branches) {
+                const foundJob = branch.govtJobs.find(j => j.id === jobId);
+                if (foundJob) {
+                    job = foundJob;
+                    branchName = branch.name;
+                    branchId = branch.id;
+                    break;
+                }
+            }
+            
+            if (!job) return;
+            
+            // Get syllabus data
+            const syllabusInfo = syllabusData[branchId]?.[job.title] || getDefaultSyllabus(branchId, job.title);
+            
+            // Update modal
+            document.getElementById('modalJobTitle').textContent = job.title;
+            document.getElementById('modalJobCompany').textContent = job.company;
+            
+            document.getElementById('modalBody').innerHTML = `
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--govt-color); margin-bottom: 15px;">
+                        <i class="fas fa-info-circle"></i> Government Job Description
+                    </h3>
+                    <p>Government position in ${branchName} offering job security, pension benefits, housing facilities, and opportunities for public service. Serve the nation while enjoying comprehensive government benefits.</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div style="background: #f0f9f0; padding: 20px; border-radius: 8px; border: 1px solid var(--govt-light);">
+                        <h4 style="color: var(--govt-color); margin-bottom: 15px;">
+                            <i class="fas fa-rupee-sign"></i> Government Salary & Benefits
+                        </h4>
+                        <p><strong>Package:</strong> ${job.salary}</p>
+                        <p><strong>Benefits:</strong> ${job.benefits}</p>
+                        <p><strong>Housing:</strong> Government accommodation or HRA</p>
+                        <p><strong>Medical:</strong> Comprehensive coverage for family</p>
+                        <p><strong>Pension:</strong> Government pension scheme</p>
+                        <p><strong>Job Security:</strong> Permanent position</p>
+                    </div>
+                    
+                    <div style="background: #f0f9f0; padding: 20px; border-radius: 8px; border: 1px solid var(--govt-light);">
+                        <h4 style="color: var(--govt-color); margin-bottom: 15px;">
+                            <i class="fas fa-info-circle"></i> Government Job Details
+                        </h4>
+                        <p><strong>Department:</strong> ${job.company}</p>
+                        <p><strong>Position:</strong> ${job.type}</p>
+                        <p><strong>Experience:</strong> ${job.experience}</p>
+                        <p><strong>Location:</strong> ${job.location}</p>
+                        <p><strong>Entrance Exam:</strong> ${job.exam}</p>
+                        <p><strong>Job Type:</strong> Permanent Government Position</p>
+                    </div>
+                </div>
+                
+                <!-- Syllabus Section -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--govt-color); margin-bottom: 15px;">
+                        <i class="fas fa-book"></i> Exam Syllabus with Weightage
+                    </h3>
+                    <table class="syllabus-table">
+                        <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th>Weightage</th>
+                                <th>Marks</th>
+                                <th>Difficulty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${syllabusInfo.topics.map(topic => `
+                                <tr>
+                                    <td>${topic.topic}</td>
+                                    <td class="weightage">${topic.weightage}</td>
+                                    <td>${topic.marks}</td>
+                                    <td>
+                                        <span style="color: ${topic.difficulty === 'High' ? 'var(--danger)' : topic.difficulty === 'Medium' ? 'var(--warning)' : 'var(--success)'}">
+                                            ${topic.difficulty}
+                                        </span>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- YouTube Channels Section -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--govt-color); margin-bottom: 15px;">
+                        <i class="fab fa-youtube"></i> Recommended YouTube Channels
+                    </h3>
+                    <p style="margin-bottom: 15px; color: #666;">Recommended channels for syllabus preparation:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                        ${syllabusInfo.youtubeChannels.map(channel => `
+                            <div class="youtube-channel">
+                                <i class="fab fa-youtube"></i>
+                                <div>
+                                    <strong>${channel.name}</strong><br>
+                                    <small>Focus: ${channel.focus}</small><br>
+                                    <a href="${channel.url}" target="_blank" style="color: var(--govt-color); font-size: 0.9rem;">
+                                        <i class="fas fa-external-link-alt"></i> Visit Channel
+                                    </a>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--govt-color); margin-bottom: 15px;">
+                        <i class="fas fa-graduation-cap"></i> Government Eligibility Criteria
+                    </h3>
+                    <ul style="list-style: none; padding-left: 20px;">
+                        <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                            <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
+                            BTech in ${branchName} from recognized university
+                        </li>
+                        <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                            <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
+                            ${job.experience} of relevant experience
+                        </li>
+                        <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                            <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
+                            Valid GATE score (if required)
+                        </li>
+                        <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                            <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
+                            Age limit as per government norms
+                        </li>
+                        <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                            <i class="fas fa-check" style="color: var(--success); position: absolute; left: 0;"></i>
+                            Indian citizenship required
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--govt-color); margin-bottom: 15px;">
+                        <i class="fas fa-tools"></i> Required Technical Skills
+                    </h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        ${job.skills.map(skill => `
+                            <span style="background: var(--govt-color); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">
+                                ${skill}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--govt-color); margin-bottom: 15px;">
+                        <i class="fas fa-list-ol"></i> Government Selection Process
+                    </h3>
+                    <ol style="padding-left: 20px;">
+                        <li style="margin-bottom: 10px; padding-left: 10px;">
+                            <strong>Step 1:</strong> ${job.exam}
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 10px;">
+                            <strong>Step 2:</strong> Technical Interview
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 10px;">
+                            <strong>Step 3:</strong> Document Verification
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 10px;">
+                            <strong>Step 4:</strong> Medical Examination
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 10px;">
+                            <strong>Step 5:</strong> Final Selection & Joining
+                        </li>
+                    </ol>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, var(--govt-color), #2e8b57); color: white; padding: 20px; border-radius: 8px; margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px;">
+                        <i class="fas fa-chart-line"></i> Government Career Growth
+                    </h3>
+                    <p>Junior Engineer → Assistant Engineer → Executive Engineer → Superintending Engineer → Chief Engineer</p>
+                    <p style="margin-top: 10px; opacity: 0.9;">Time-based promotions with government pay commissions</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-primary" style="padding: 12px 40px; font-size: 16px; background: var(--govt-color);" onclick="applyForJob(${job.id})">
+                        <i class="fas fa-file-import"></i> Apply through Government Portal
+                    </button>
+                    <button class="btn btn-secondary" style="padding: 12px 40px; font-size: 16px; margin-left: 15px; border-color: var(--govt-color); color: var(--govt-color);" onclick="saveGovtJob(${job.id})">
+                        <i class="fas fa-bookmark"></i> Save Government Job
+                    </button>
+                </div>
+            `;
+            
+            // Show modal
+            document.getElementById('jobModal').classList.add('show');
+        }
+
+        function getDefaultSyllabus(branchId, jobTitle) {
+            // Return default syllabus if specific not found
+            return {
+                topics: [
+                    { topic: "Core Engineering Subjects", weightage: "40%", marks: "40/100", difficulty: "Medium" },
+                    { topic: "Technical Skills", weightage: "30%", marks: "30/100", difficulty: "Medium" },
+                    { topic: "General Aptitude", weightage: "20%", marks: "20/100", difficulty: "Low" },
+                    { topic: "Professional Knowledge", weightage: "10%", marks: "10/100", difficulty: "High" }
+                ],
+                youtubeChannels: [
+                    { name: "Gate Academy", url: "https://youtube.com/c/GateAcademy", focus: "Engineering Subjects" },
+                    { name: "Neso Academy", url: "https://youtube.com/c/NesoAcademy", focus: "Technical Concepts" },
+                    { name: "Unacademy", url: "https://youtube.com/c/Unacademy", focus: "Exam Preparation" }
+                ]
+            };
+        }
+
+        function setupEventListeners() {
+            // Search functionality
+            const searchInput = document.querySelector('.search-box input');
+            const searchBtn = document.querySelector('.search-box button');
+            
+            searchBtn.addEventListener('click', function() {
+                const query = searchInput.value.toLowerCase();
+                if (query) {
+                    // Search across all government jobs
+                    let allGovtJobs = [];
+                    branches.forEach(branch => {
+                        allGovtJobs = [...allGovtJobs, ...branch.govtJobs.map(job => ({...job, branchName: branch.name}))];
+                    });
+                    
+                    const filteredJobs = allGovtJobs.filter(job => 
+                        job.title.toLowerCase().includes(query) ||
+                        job.company.toLowerCase().includes(query) ||
+                        job.skills.some(skill => skill.toLowerCase().includes(query)) ||
+                        job.branchName.toLowerCase().includes(query) ||
+                        job.type.toLowerCase().includes(query)
+                    );
+                    
+                    if (filteredJobs.length > 0) {
+                        // Show search results
+                        document.getElementById('selectedBranchTitle').textContent = `Government Jobs - Search Results for "${query}"`;
+                        document.getElementById('jobCount').textContent = `${filteredJobs.length} Government Jobs Found`;
+                        loadSearchResults(filteredJobs);
+                    } else {
+                        alert(`No government jobs found for "${query}". Try different keywords.`);
+                    }
+                }
+            });
+
+            // Modal close
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.getElementById('jobModal').classList.remove('show');
+            });
+
+            // Close modal on outside click
+            document.getElementById('jobModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('show');
+                }
+            });
+
+            // CTA Button - GATE Preparation
+            document.querySelector('.cta-button').addEventListener('click', function() {
+                alert('GATE Preparation Portal\nAccess study materials, previous papers, and coaching for government job exams.');
+            });
+        }
+
+        function loadSearchResults(jobs) {
+            const jobsGrid = document.getElementById('jobsGrid');
+            jobsGrid.innerHTML = jobs.map(job => `
+                <div class="job-card">
+                    <span class="job-type">${job.type}</span>
+                    <h3 class="job-title">${job.title}</h3>
+                    <p class="job-company">
+                        <i class="fas fa-landmark"></i> 
+                        ${job.company}
+                        <span class="govt-badge" style="margin-left: 10px;">
+                            <i class="fas fa-shield-alt"></i> Government
+                        </span>
+                    </p>
+                    <p class="job-company">
+                        <i class="fas fa-code-branch"></i> 
+                        ${job.branchName}
+                    </p>
+                    
+                    <div class="job-details">
+                        <p><i class="fas fa-money-bill-wave"></i> Salary: ${job.salary}</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Location: ${job.location}</p>
+                        <p><i class="fas fa-briefcase"></i> Experience: ${job.experience}</p>
+                        <p><i class="fas fa-file-alt"></i> Exam: ${job.exam}</p>
+                    </div>
+                    
+                    <div class="job-skills">
+                        ${job.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                    
+                    <div class="job-actions">
+                        <button class="btn btn-primary" onclick="showJobDetails(${job.id})">
+                            <i class="fas fa-eye"></i> View Details
+                        </button>
+                        <button class="btn btn-secondary" onclick="applyForJob(${job.id})">
+                            <i class="fas fa-file-import"></i> Apply Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function applyForJob(jobId) {
+            // Find job
+            let job = null;
+            for (const branch of branches) {
+                const foundJob = branch.govtJobs.find(j => j.id === jobId);
+                if (foundJob) {
+                    job = foundJob;
+                    break;
+                }
+            }
+            
+            if (job) {
+                alert(`Redirecting to Government Application Portal\n\nPosition: ${job.title}\nDepartment: ${job.company}\n\nYou will be redirected to the official government portal for application.`);
+                // In real implementation, this would redirect to the actual government job portal
+                // window.open('https://www.govtjobs.gov.in', '_blank');
+            }
+            
+            document.getElementById('jobModal').classList.remove('show');
+        }
+
+        function saveGovtJob(jobId) {
+            alert(`Government job saved to your profile. You can view saved government jobs in your dashboard.\n\nNote: You must apply through the official government portal before the deadline.`);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
