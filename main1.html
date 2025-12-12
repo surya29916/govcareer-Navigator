@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | GovCareer Navigator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #00509E;
+            --accent-blue: #0066CC;
+            --gold-accent: #FFD700;
+            --light-blue: #E6F0FF;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #4A4A4A;
+            --light-gray: #F5F7FA;
+            --white: #FFFFFF;
+            --border-radius: 10px;
+            --shadow: 0 8px 30px rgba(0, 51, 102, 0.12);
+            --shadow-hover: 0 12px 40px rgba(0, 51, 102, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f5ff 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            color: var(--dark-gray);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background elements */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(0, 80, 158, 0.05) 0%, rgba(0, 102, 204, 0.03) 100%);
+            z-index: -1;
+        }
+
+        .circle-1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            left: -150px;
+        }
+
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1100px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0, 51, 102, 0.05);
+            min-height: 700px;
+        }
+
+        /* Left Panel - Branding */
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .law-cap-left {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--gold-accent);
+            color: var(--primary-blue);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            border: 2px solid var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .left-content {
+            max-width: 500px;
+        }
+
+        .left-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.4s forwards;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.6s forwards;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.8s forwards;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        /* Right Panel - Signup Form */
+        .right-panel {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Professional Law Cap Badge */
+        .professional-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.3s forwards;
+        }
+
+        .badge-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-blue);
+            box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+            border: 3px solid var(--gold-accent);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .badge-icon:hover {
+            transform: rotate(-10deg) scale(1.1);
+            box-shadow: 0 12px 25px rgba(0, 51, 102, 0.2);
+        }
+
+        .badge-text {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.5s forwards;
+            position: relative;
+            display: inline-block;
+        }
+
+        .form-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 2px;
+        }
+
+        .form-header p {
+            color: var(--medium-gray);
+            font-size: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.6s forwards;
+            margin-top: 15px;
+        }
+
+        /* Google Signup Button */
+        .google-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--white);
+            border: 2px solid #E0E0E0;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.7s forwards;
+        }
+
+        .google-btn:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .google-btn i {
+            font-size: 1.2rem;
+            color: #DB4437;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.8s forwards;
+        }
+
+        .divider span {
+            flex-grow: 1;
+            height: 1px;
+            background: #E0E0E0;
+        }
+
+        .divider-text {
+            padding: 0 15px;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Email Signup Form */
+        .email-form {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.9s forwards;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #E0E0E0;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 25px 0 30px;
+        }
+
+        .terms-checkbox input {
+            margin-top: 4px;
+        }
+
+        .terms-checkbox label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            line-height: 1.5;
+        }
+
+        .terms-checkbox a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .terms-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        /* Signup Button */
+        .signup-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .signup-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.3);
+        }
+
+        .signup-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Login Link */
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #E0E0E0;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 1s forwards;
+        }
+
+        .login-link p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .login-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 51, 102, 0.2);
+        }
+
+        /* Enhanced Form Elements */
+        .input-with-icon {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+        }
+
+        .input-with-icon input {
+            padding-left: 45px;
+        }
+
+        /* Password Strength Indicator */
+        .password-strength {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .strength-bar {
+            flex-grow: 1;
+            height: 4px;
+            background: #E0E0E0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            background: #FF4444;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .strength-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--medium-gray);
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 32, 68, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10000;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid var(--gold-accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                max-width: 600px;
+            }
+            
+            .left-panel, .right-panel {
+                padding: 40px 35px;
+            }
+            
+            .left-panel {
+                text-align: center;
+            }
+            
+            .left-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .features-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .features-list li {
+                flex: 0 0 calc(50% - 20px);
+                margin-bottom: 0;
+            }
+            
+            .professional-badge {
+                top: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 100%;
+            }
+            
+            .left-panel, .right-panel {
+                padding: 35px 25px;
+            }
+            
+            .left-content h1 {
+                font-size: 1.9rem;
+            }
+            
+            .form-header h2 {
+                font-size: 1.7rem;
+            }
+            
+            .features-list li {
+                flex: 0 0 100%;
+            }
+            
+            .google-btn, .signup-btn, .login-btn {
+                padding: 14px;
+            }
+            
+            .professional-badge {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-bottom: 20px;
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+        <div class="loading-text">Redirecting to Main Page...</div>
+    </div>
+
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-compass"></i>
+                    <div class="law-cap-left">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                <div class="logo-text">GovCareer Navigator</div>
+            </div>
+            
+            <div class="left-content">
+                <h1>Join the Future of Government Careers</h1>
+                <p>Create your account to access personalized career guidance, exam resources, and job opportunities tailored for engineering graduates in government sectors.</p>
+                
+                <ul class="features-list">
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        Personalized career roadmaps
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        Exam preparation resources
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        Job opportunity alerts
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        Expert mentorship programs
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <!-- Professional Law Cap Badge -->
+            <div class="professional-badge">
+                <div class="badge-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="badge-text">Professional</div>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Create Account</h2>
+                    <p>Sign up to start your government career journey</p>
+                </div>
+                
+                <!-- Google Signup Button -->
+                <button class="google-btn" id="googleSignupBtn">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </button>
+                
+                <div class="divider">
+                    <span></span>
+                    <span class="divider-text">Or continue with email</span>
+                    <span></span>
+                </div>
+                
+                <!-- Email Signup Form -->
+                <form class="email-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" placeholder="Enter your email address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <div class="strength-text" id="strengthText">Weak</div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I understand that my data will be used to provide personalized career guidance.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="signup-btn">
+                        <i class="fas fa-user-plus"></i>
+                        Create Account
+                    </button>
+                </form>
+                
+                <!-- Login Link -->
+                <div class="login-link">
+                    <p>Already have an account?</p>
+                    <button class="login-btn" id="loginBtn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Log In to Your Account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const signupForm = document.getElementById('signupForm');
+        const googleSignupBtn = document.getElementById('googleSignupBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        const passwordInput = document.getElementById('password');
+        const strengthFill = document.getElementById('strengthFill');
+        const strengthText = document.getElementById('strengthText');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        // Function to redirect to main.html
+        function redirectToMainPage(userName = 'User') {
+            showLoadingOverlay();
+            
+            // Store user data in localStorage
+            const userData = {
+                name: userName,
+                email: document.getElementById('email')?.value || 'user@example.com',
+                loggedIn: true,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('govCareerUser', JSON.stringify(userData));
+            
+            // Redirect after a short delay to show loading animation
+            setTimeout(() => {
+                window.location.href = 'main.html';
+            }, 1500);
+        }
+
+        // Show loading overlay
+        function showLoadingOverlay() {
+            loadingOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide loading overlay
+        function hideLoadingOverlay() {
+            loadingOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Password Strength Indicator
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            let strengthPercentage = 0;
+            
+            // Check password criteria
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            // Calculate percentage and update UI
+            strengthPercentage = strength * 25;
+            strengthFill.style.width = `${strengthPercentage}%`;
+            
+            // Update color and text based on strength
+            if (strength === 0) {
+                strengthFill.style.background = '#FF4444';
+                strengthText.textContent = 'Weak';
+                strengthText.style.color = '#FF4444';
+            } else if (strength <= 2) {
+                strengthFill.style.background = '#FFA500';
+                strengthText.textContent = 'Fair';
+                strengthText.style.color = '#FFA500';
+            } else if (strength === 3) {
+                strengthFill.style.background = '#4CAF50';
+                strengthText.textContent = 'Good';
+                strengthText.style.color = '#4CAF50';
+            } else {
+                strengthFill.style.background = '#2E7D32';
+                strengthText.textContent = 'Strong';
+                strengthText.style.color = '#2E7D32';
+            }
+        });
+
+        // Form Submission
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Validate form
+            if (!fullName || !email || !password) {
+                showMessage('Please fill in all required fields', 'error');
+                return;
+            }
+            
+            const submitBtn = this.querySelector('.signup-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Show success message
+                showMessage(`Welcome, ${fullName}! Your account has been created successfully.`, 'success');
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Redirect to main page after 2 seconds
+                setTimeout(() => {
+                    redirectToMainPage(fullName);
+                }, 2000);
+            }, 1500);
+        });
+
+        // Google Signup
+        googleSignupBtn.addEventListener('click', function() {
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting to Google...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                showMessage('Google authentication successful!', 'success');
+                this.innerHTML = originalText;
+                this.disabled = false;
+                
+                // Redirect to main page after 1 second
+                setTimeout(() => {
+                    redirectToMainPage('Google User');
+                }, 1000);
+            }, 1500);
+        });
+
+        // Login Button
+        loginBtn.addEventListener('click', function() {
+            showMessage('Redirecting to login...', 'info');
+            
+            // Simulate login process
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                // For demo purposes, we'll simulate a successful login
+                const demoEmail = 'demo@student.edu';
+                const demoPassword = 'Demo@123';
+                
+                showMessage('Login successful! Welcome back.', 'success');
+                this.innerHTML = originalText;
+                this.disabled = false;
+                
+                // Redirect to main page after 1.5 seconds
+                setTimeout(() => {
+                    // Store demo user data
+                    const userData = {
+                        name: 'Demo User',
+                        email: demoEmail,
+                        loggedIn: true,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    localStorage.setItem('govCareerUser', JSON.stringify(userData));
+                    redirectToMainPage('Demo User');
+                }, 1500);
+            }, 1000);
+        });
+
+        // Show message function
+        function showMessage(message, type) {
+            // Remove existing message
+            const existingMsg = document.querySelector('.notification-message');
+            if (existingMsg) existingMsg.remove();
+            
+            // Create message element
+            const messageEl = document.createElement('div');
+            messageEl.className = `notification-message ${type}`;
+            messageEl.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            // Style based on type
+            const bgColor = type === 'error' ? '#DC2626' : 
+                           type === 'success' ? '#059669' : '#0066CC';
+            
+            messageEl.style.cssText = `
+                position: fixed;
+                top: 30px;
+                right: 30px;
+                background: ${bgColor};
+                color: white;
+                padding: 16px 24px;
+                border-radius: 8px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                max-width: 400px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 500;
+                font-size: 14px;
+            `;
+            
+            document.body.appendChild(messageEl);
+            
+            // Remove after 4 seconds
+            setTimeout(() => {
+                messageEl.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => messageEl.remove(), 300);
+            }, 4000);
+        }
+
+        // Add notification animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Auto-fill demo credentials on double-click
+        document.getElementById('email').addEventListener('dblclick', function() {
+            this.value = 'demo@student.edu';
+            document.getElementById('fullName').value = 'John Doe';
+            document.getElementById('password').value = 'Demo@123';
+            
+            // Trigger password strength update
+            const event = new Event('input');
+            document.getElementById('password').dispatchEvent(event);
+            
+            showMessage('Demo credentials filled. You can now test the signup process.', 'info');
+            
+            // Auto-check terms
+            document.getElementById('terms').checked = true;
+        });
+
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedUser = localStorage.getItem('govCareerUser');
+            if (savedUser) {
+                try {
+                    const userData = JSON.parse(savedUser);
+                    if (userData.loggedIn) {
+                        showMessage(`Welcome back, ${userData.name}! You are already logged in.`, 'info');
+                        
+                        // Auto-fill with saved data
+                        setTimeout(() => {
+                            document.getElementById('fullName').value = userData.name;
+                            document.getElementById('email').value = userData.email;
+                        }, 100);
+                    }
+                } catch (e) {
+                    console.log('No valid user data found');
+                }
+            }
+        });
+    </script>
+</body>
+</html>`````````````
